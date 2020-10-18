@@ -23,20 +23,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        firstOpeningLabelValue()
+        settingColourOfView()
     }
     
-    
-    private func firstOpeningLabelValue() {
-        redValue.text = formatingSlidersValue(slider: redSlider)
-        greenValue.text = formatingSlidersValue(slider: greenSlider)
-        blueValue.text = formatingSlidersValue(slider: blueSlider)
-    }
-    
-    
-    private func formatingSlidersValue(slider: UISlider) -> String {
-        String(format: "%.1f", slider.value)
-    }
     
     private func settingColourOfView() {
         changeableView.backgroundColor = UIColor.init(displayP3Red: CGFloat(redSlider.value),
@@ -45,6 +34,9 @@ class ViewController: UIViewController {
                                                       alpha: 1)
     }
 
+    private func formatingSlidersValue(slider: UISlider) -> String {
+        String(format: "%.1f", slider.value)
+    }
     
     @IBAction func changeValueOfLabels(sender: UISlider) {
         
